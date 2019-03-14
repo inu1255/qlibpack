@@ -6,10 +6,11 @@ os:
 language: node_js
 
 node_js:
-  - node
   - 8
 
-cache: cargo
+cache:
+  - yarn: true
+  - cargo: true
 
 before_install:
   # Install Rust and Cargo
@@ -31,4 +32,4 @@ script:
   - npm test
   # Publish when using '[publish binary]' keywords
   - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
-  - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then yarn upload-binary || exit 0; fi;
+  - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then npm upload-binary || exit 0; fi;
