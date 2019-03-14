@@ -1,0 +1,17 @@
+[package]
+name = "qlibpack"
+version = "0.1.0"
+authors = ["inu1255 <929909260@qq.com>"]
+license = "MIT"
+build = "build.rs"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+name = "qlibpack"
+crate-type = ["dylib"]
+
+[build-dependencies]
+neon-build = "0.2.0"
+
+[dependencies]
+neon = "0.2.0"
