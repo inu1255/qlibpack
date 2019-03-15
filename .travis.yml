@@ -1,16 +1,14 @@
-matrix:
-  allow_failures:
-    - os: windows
-    
 os:
-  - osx
-  - linux
+  # - osx
+  # - linux
   - windows
 
 language: node_js
 
 node_js:
-  - 8
+  - "8"
+  - "10"
+  - "node"
 
 cache:
   - cargo: true
